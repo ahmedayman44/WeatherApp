@@ -1,4 +1,4 @@
-Weather App
+
 These app to determine weather 
 ## Getting Started
 
