@@ -1,4 +1,4 @@
-import 'package:statless_wedget/models/weather_model.dart';
+import '../../models/weather_model.dart';
 
 class WeatherState {}
 

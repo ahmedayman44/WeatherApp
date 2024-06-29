@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:statless_wedget/Views/home_view.dart';
-import 'package:statless_wedget/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'Views/home_view.dart';
+import 'cubits/get_weather_cubit/get_weather_cubit.dart';
 
 void main() {
   runApp(const WeatherApp());

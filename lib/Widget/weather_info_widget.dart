@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:statless_wedget/cubits/get_weather_cubit/get_weather_cubit.dart';
-import 'package:statless_wedget/main.dart';
-import 'package:statless_wedget/models/weather_model.dart';
+import '../cubits/get_weather_cubit/get_weather_cubit.dart';
+import '../main.dart';
+import '../models/weather_model.dart';
 
 class WeatherInfo extends StatelessWidget {
   const WeatherInfo({

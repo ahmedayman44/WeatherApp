@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:statless_wedget/Views/search_view.dart';
-import 'package:statless_wedget/Widget/no_weather.dart';
+import 'search_view.dart';
+import '../Widget/no_weather.dart';
 
-import 'package:statless_wedget/Widget/weather_info_widget.dart';
-import 'package:statless_wedget/cubits/get_weather_cubit/get_weather_cubit.dart';
-import 'package:statless_wedget/cubits/get_weather_cubit/get_weather_states.dart';
+import '../Widget/weather_info_widget.dart';
+import '../cubits/get_weather_cubit/get_weather_cubit.dart';
+import '../cubits/get_weather_cubit/get_weather_states.dart';
 
 class HomeView extends StatelessWidget {
   const HomeView({
