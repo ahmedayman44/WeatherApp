@@ -16,18 +16,20 @@ class WeatherModel {
       required this.mintemp,
       required this.weatherCondition});
 
-  factory WeatherModel.fromJson(Json) {
+  factory WeatherModel.fromJson(json) {
     return WeatherModel(
-      cityName: Json['location']['name'],
+      cityName: json['location']['name'],
       date: DateTime.parse(
-        Json['current']['last_updated'],
+        json['current']['last_updated'],
       ),
-      image: Json['forecast']['forecastday'][0]['day']['condition']['icon'],
-      temp: Json['forecast']['forecastday'][0]['day']['avgtemp_c'],
-      maxtemp: Json['forecast']['forecastday'][0]['day']['maxtemp_c'],
-      mintemp: Json['forecast']['forecastday'][0]['day']['mintemp_c'],
-      weatherCondition: Json['forecast']['forecastday'][0]['day']['condition']
+      image: json['forecast']['forecastday'][0]['day']['condition']['icon'],
+      temp: json['forecast']['forecastday'][0]['day']['avgtemp_c'],
+      maxtemp: json['forecast']['forecastday'][0]['day']['maxtemp_c'],
+      mintemp: json['forecast']['forecastday'][0]['day']['mintemp_c'],
+      weatherCondition: json['forecast']['forecastday'][0]['day']['condition']
           ['text'],
     );
   }
+
+  getWeatherMaterialColor() {}
 }

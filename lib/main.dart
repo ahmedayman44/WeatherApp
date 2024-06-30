@@ -17,13 +17,15 @@ class WeatherApp extends StatelessWidget {
       child: Builder(
         builder: (context) => MaterialApp(
             theme: ThemeData(
-              primarySwatch: getWeatherMaterialColor(
-                  BlocProvider.of<GetWeatherCubit>(context)
-                      .weatherModel
-                      ?.weatherCondition),
+              primarySwatch:
+                  BlocProvider.of<GetWeatherCubit>(context).weatherModel == null
+                      ? Colors.blue
+                      : BlocProvider.of<GetWeatherCubit>(context)
+                          .weatherModel!
+                          .getWeatherMaterialColor(),
             ),
             debugShowCheckedModeBanner: false,
-            home: HomeView()),
+            home: const HomeView()),
       ),
     );
   }

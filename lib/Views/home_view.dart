@@ -21,7 +21,7 @@ class HomeView extends StatelessWidget {
           style: TextStyle(
               color: Colors.white, fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        backgroundColor: Colors.blue , 
+        backgroundColor: Colors.blue,
         actions: [
           IconButton(
             onPressed: () {
@@ -45,14 +45,20 @@ class HomeView extends StatelessWidget {
           BlocBuilder<GetWeatherCubit, WeatherState>(builder: (context, state) {
         if (state is WeatherInitialState) {
           return const NoWeather();
+        } else if (state is WeatherLoadingState) {
+          return const Center(
+            child: CircularProgressIndicator(),
+          );
         } else if (state is WeatherSucessState) {
           return WeatherInfo(
             weather: state.weatherModel,
           );
         } else {
-          return const Text(
-            'oops there is an error !',
-            style: TextStyle(fontSize: 25),
+          return const Center(
+            child: Text(
+              'oops there is an error !',
+              style: TextStyle(fontSize: 25),
+            ),
           );
         }
       }),
