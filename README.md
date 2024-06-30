@@ -1,7 +1,5 @@
-# statless_wedget
 
-A new Flutter project.
-
+These app to determine weather 
 ## Getting Started
 
 This project is a starting point for a Flutter application.
