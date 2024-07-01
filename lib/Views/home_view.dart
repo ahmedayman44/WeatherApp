@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'search_view.dart';
 import '../Widget/no_weather.dart';
@@ -54,14 +55,31 @@ class HomeView extends StatelessWidget {
             weather: state.weatherModel,
           );
         } else {
-          return const Center(
-            child: Text(
-              'oops there is an error !',
-              style: TextStyle(fontSize: 25),
-            ),
-          );
+          return failedData();
         }
       }),
     );
+  }
+
+  Center failedData() {
+    return Center(
+            child: Container(
+          color: Colors.white,
+          child: Column(
+            children: [
+              const SizedBox(
+                height: 100,
+              ),
+              Image.asset("assets/images/Error data.webp"),
+              const Text(
+                'Can\'t connect ... check your internet',
+                style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold),
+              ),
+            ],
+          ),
+        ));
   }
 }
