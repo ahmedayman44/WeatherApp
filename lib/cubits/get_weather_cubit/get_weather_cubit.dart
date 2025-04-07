@@ -5,7 +5,8 @@ import '../../models/weather_model.dart';
 import '../../service/service_weather.dart';
 
 class GetWeatherCubit extends Cubit<WeatherState> {
-  GetWeatherCubit() : super(WeatherInitialState());
+  GetWeatherCubit(this.weatherService) : super(WeatherInitialState());
+  WeatherService weatherService;
 
   WeatherModel? weatherModel;
 
@@ -13,9 +14,9 @@ class GetWeatherCubit extends Cubit<WeatherState> {
     emit(WeatherLoadingState());
     try {
       // Logic response for change state
-      weatherModel =
+   WeatherModel   weatherModel =
           await WeatherService(dio: Dio()).getNewsWeather(cityName: cityName);
-      emit(WeatherSucessState(weatherModel!));
+      emit(WeatherSucessState(weatherModel: weatherModel));
     } catch (e) {
       emit(WeatherFailureState(
         e.toString(),

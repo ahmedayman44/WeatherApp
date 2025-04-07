@@ -21,8 +21,9 @@ class SearchView extends StatelessWidget {
             padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 15),
             child: TextFormField(
               onFieldSubmitted: (value) async {
-                var getweathercubit = BlocProvider.of<GetWeatherCubit>(context);
-                getweathercubit.getWeather(cityName: value);
+                // var getweathercubit = BlocProvider.of<GetWeatherCubit>(context);
+                // getweathercubit.getWeather(cityName: value);
+                BlocProvider.of<GetWeatherCubit>(context).getWeather(cityName: value);  
                 Navigator.pop(context);
               },
               decoration: InputDecoration(

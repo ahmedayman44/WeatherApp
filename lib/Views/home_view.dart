@@ -72,7 +72,7 @@ class HomeView extends StatelessWidget {
               ),
               Image.asset("assets/images/Error data.webp"),
               const Text(
-                'Can\'t connect ... check your internet',
+                'Oops something went wrong, try again later',
                 style: TextStyle(
                     color: Colors.black,
                     fontSize: 16,

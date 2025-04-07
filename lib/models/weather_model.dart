@@ -32,4 +32,6 @@ class WeatherModel {
   }
 
   getWeatherMaterialColor() {}
+
+  getThemeColor() {}
 }

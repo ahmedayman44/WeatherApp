@@ -1,5 +1,7 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:statless_wedget/service/service_weather.dart';
 import 'Views/home_view.dart';
 import 'cubits/get_weather_cubit/get_weather_cubit.dart';
 
@@ -13,7 +15,7 @@ class WeatherApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => GetWeatherCubit(),
+      create: (context) => GetWeatherCubit(WeatherService(dio: Dio())),
       child: Builder(
         builder: (context) => MaterialApp(
             theme: ThemeData(
